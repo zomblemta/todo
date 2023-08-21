@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:web": "turbo run dev --filter @td/web"
+    "web": "pnpm --filter @td/web -- ",
+    "desktop": "pnpm --filter @td/desktop --"
   },
   "devDependencies": {
     "rimraf": "^4.4.1",
