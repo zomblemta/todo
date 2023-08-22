@@ -25,3 +25,4 @@ dev.db-journal
 .swiftpm
 /core/migration_test
 sd_init.json
+crates/prisma
