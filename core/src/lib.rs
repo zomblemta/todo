@@ -1,17 +1,18 @@
 use prisma_client_rust::PrismaClient;
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+use crate::api;
+
+pub mod api;
 
 pub struct Node {
-    db: Arc<PrismaClient>
 }
+
 
 impl  Node {
     pub fn new(self) {
-        db
+        ok(({},router))
     }
+    
 }
 
 #[cfg(test)]

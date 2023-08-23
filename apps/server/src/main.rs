@@ -1,12 +1,17 @@
 use std::{env, net::SocketAddr};
 
 use axum::routing::get;
+use td_core::Node;
 
 mod utils;
 
 #[tokio::main]
 async fn main() {
-    let app = axum::Router::new().route("/health", get(|| async { "OK" }));
+    let (_,router) = Node::new();
+
+    let app = axum::Router::new()
+        .route("/health", get(|| async { "OK" }))
+        .nest("/api", router);
 
     let signal = utils::axum_shutdown_signal();
 

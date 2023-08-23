@@ -4155,6 +4155,7 @@ name = "td-server"
 version = "0.1.0"
 dependencies = [
  "axum",
+ "td-core",
  "tokio",
 ]
 
