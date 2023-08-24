@@ -1,27 +1,16 @@
-use prisma_client_rust::PrismaClient;
+use std::sync::Arc;
 
-use crate::api;
+use axum::{Extension, Router};
+use prisma_client_rust::PrismaClient;
 
 pub mod api;
 
-pub struct Node {
-}
+pub struct Node {}
 
+impl Node {
+    pub async fn new() -> (Arc<Node>, Router) {
+        let db = Arc::new(PrismaClient::_builder().build().await.unwrap());
 
-impl  Node {
-    pub fn new(self) {
-        ok(({},router))
-    }
-    
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        (Node {}.into(), api::mount(Extension(db)).into())
     }
 }

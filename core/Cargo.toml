@@ -6,13 +6,8 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.8", features = [
-  # See more: https://prisma.brendonovich.dev/writing-data/create#create-many
-  # 'sqlite-create-many',
-  # See more: https://prisma.brendonovich.dev/extra/migrations
-  "migrations",
-  "sqlite",
-], default-features = false }
+prisma-client-rust =  { workspace = true }
 prisma-client-rust-cli =  { workspace = true }
-tokio = { version = "1.0", features = ["full"] }
+tokio = { workspace = true }
 serde = { version = "1.0", features = ["derive"] }
+axum = "0.6.18"

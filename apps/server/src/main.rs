@@ -1,13 +1,13 @@
+use axum::routing::get;
 use std::{env, net::SocketAddr};
 
-use axum::routing::get;
 use td_core::Node;
 
 mod utils;
 
 #[tokio::main]
-async fn main() {
-    let (_,router) = Node::new();
+ async fn main() {
+    let (_, router) = Node::new();
 
     let app = axum::Router::new()
         .route("/health", get(|| async { "OK" }))

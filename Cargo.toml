@@ -7,4 +7,12 @@ members = [
 ]
 
 [workspace.dependencies]
-prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-rust", tag = "0.6.9" }
+prisma-client-rust = { git = "https://github.com/Brendonovich/prisma-client-rust",  features = [
+	"migrations",
+	"sqlite",
+], default-features = false }
+prisma-client-rust-cli = { git = "https://github.com/Brendonovich/prisma-client-rust", features = [
+	"migrations",
+	"sqlite",
+], default-features = false }
+tokio = { version = "1.28.2", features = ["full"] }
