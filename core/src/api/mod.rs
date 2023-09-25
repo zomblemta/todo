@@ -6,15 +6,14 @@ use axum::{
     routing::get,
     Json, Router, Extension,
 };
-use prisma_client_rust::PrismaClient;
+use prisma_client_rust::{PrismaClient, NewClientError};
 
-type Database = Extension<Arc<PrismaClient>>;
 
-pub async fn get_income(db: Database) -> (StatusCode, Json<String>) {
+pub async fn get_income(db) -> (StatusCode, Json<String>) {
 
     (StatusCode::OK, Json(String::from("hello world")))
 }
 
-pub(crate) fn mount(db: Database) -> Router {
+pub(crate) fn mount(db) -> Router {
     Router::new().route("/getIncome", get(get_income))
 }

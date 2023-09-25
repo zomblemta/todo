@@ -1,0 +1,29 @@
+.layout-header {
+  top: 0;
+  width: 100%;
+  height: 48px;
+  background-color: transparent;
+  padding: 12px 24px;
+  position: fixed;
+}
+
+.header-continer {
+  position: relative;
+  width: 100%;
+}
+
+.header-right {
+    position: absolute;
+    right: 120px;
+}
+
+.system-settings{
+
+}
+
+.system-settings::before{
+    width: 1px;
+    height: 24px;
+    content: "";
+    background-color: #303030;
+}

@@ -3,7 +3,7 @@ resolver = "2"
 members = [
 	"apps/server",
     "core",
-    "crates/prisma-cli"
+    "crates/*"
 ]
 
 [workspace.dependencies]

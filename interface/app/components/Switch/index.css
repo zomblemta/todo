@@ -1,0 +1,31 @@
+.td-switch {
+  position: relative;
+  border-radius: 11px;
+  display: block;
+  width: 40px;
+  height: 22px;
+  outline: none !important;
+  border: none;
+  border: 1px solid rgba(84, 84, 84, 0.65);
+  background-color: #292929;
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+.td-switch-handle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 2px;
+  left: 2px;
+}
+.td-switch-handle-checked {
+  left: calc(100% - 20px);
+}
+
+.td-switch-handle::before {
+  position: absolute;
+  background-color: var(--theme-background--soft);
+  border-radius: 9px;
+  content: "";
+  inset: 0;
+}

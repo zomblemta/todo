@@ -1,18 +1,16 @@
-import { Navigate, Outlet } from "react-router";
+import { Navigate, Outlet, RouteObject } from "react-router-dom";
 import ErrorPage from "../ErrorPage";
+import Layout from "./Layout";
+import './index.css'
 
 const Index = () => {
   return <Navigate to={`/overview`} replace />;
 };
 
-export const routes = [
+export const routes: RouteObject[] = [
   {
     path: "/",
-    element: (
-      <div>
-        <Outlet />
-      </div>
-    ),
+    element: <Outlet />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -21,8 +19,9 @@ export const routes = [
       },
       {
         path: "/overview",
-        lazy: () => import("./Layout"),
-        children: [{}],
+        element: <Layout />,
+        // lazy: () => import("./Layout"),
+        // children: [{}],
       },
     ],
   },

@@ -1,0 +1,27 @@
+.flex {
+  display: flex;
+}
+
+:root {
+  --theme-color: #fff;
+  --theme-background: #01000b;
+}
+
+.day {
+  --theme-color: #01000b;
+  --theme-background: #fff;
+  --theme-background--soft: #fff;
+
+}
+
+.dark {
+  --theme-color: #fff;
+  --theme-background: #01000b;
+  --theme-background--soft: #191919;
+
+}
+
+.color-change {
+  transition-duration: 0.5s;
+  transition-property: color background-color;
+}
