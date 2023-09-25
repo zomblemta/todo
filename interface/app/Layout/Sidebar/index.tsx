@@ -15,10 +15,10 @@ export default () => {
       //   title: "理财",
       //   path: "/financialManagement",
       // },
-      // {
-      //   title: "跑步计划",
-      //   path: "/run",
-      // },
+      {
+        title: "跑步计划",
+        path: "/run",
+      },
     ]);
   }, []);
 
