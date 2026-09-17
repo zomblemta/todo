@@ -18,7 +18,7 @@ export default ({ node }: SidebarLinkProps) => {
         navigate(node.path);
       }}
     >
-      <span> {node.title}</span>
+      <span>{node.title}</span>
     </div>
   );
 };

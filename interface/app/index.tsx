@@ -10,7 +10,7 @@ const Index = () => {
 export const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Outlet />,
+    element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
       {
@@ -18,19 +18,13 @@ export const routes: RouteObject[] = [
         element: <Index />,
       },
       {
+        path: '/run',
+        element: <>run</>
+      },
+      {
         path: "/overview",
-        element: <Layout />,
+        element: <>overview</>,
         // lazy: () => import("./Layout"),
-        children: [
-          // {
-          //   path: "/",
-          //   element: <>测试</>,
-          // },
-          // {
-          //   path: "/run",
-          //   element: <div>跑步计划</div>,
-          // },
-        ],
       },
     ],
   },

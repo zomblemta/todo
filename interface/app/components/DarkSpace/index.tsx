@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { PointMaterial, Points, Trail } from "@react-three/drei";
 import { inSphere as randomInSphere } from "maath/random";
 import { Color, type Mesh } from "three";
+import './index.css'
 
 const Stars = () => {
   const ref = useRef<Mesh>();
@@ -59,7 +60,14 @@ function ShootingStar() {
 
 export const DarkSpace: FunctionComponent = () => {
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
+    <div
+      style={{
+        width: "100%",
+        height: "100vh",
+        position: "absolute",
+      }}
+    >
+      <div className="dark-space-color-card1"></div>
       <Canvas camera={{ position: [0, 0, 0] }}>
         <ShootingStar />
         <ShootingStar />
